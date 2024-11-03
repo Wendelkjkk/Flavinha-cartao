@@ -1,0 +1,86 @@
+/* Fundo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Cor de fundo escuro (dark amoled) */
+    font-family: sans-serif;
+}
+
+/* Estilos do Flip Card */
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+}
+
+/* Títulos do card */
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilos internos do card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Efeito de flip no card */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos da frente e verso do card */
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.34);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid skyblue;
+    border-radius: 1rem;
+}
+
+/* Estilos da frente do card */
+.flip-card-front {
+    background: linear-gradient(120deg, #1C1C1C 60%, #2C2C2C 88%, #3C3C3C 40%, rgba(80, 255, 245, 0.603) 48%);
+    color: #FFFFFF; /* Cor do texto mais claro */
+}
+
+/* Estilos do verso do card */
+.flip-card-back {
+    background: linear-gradient(120deg, #2C2C2C 30%, #1C1C1C 88%, #3C3C3C 40%, #2C2C2C 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.back-button {
+    margin-top: 15px;
+    padding: 5px 10px; /* Diminuído o padding para tornar o botão menor */
+    font-size: 0.8em; /* Tamanho da fonte reduzido */
+    background-color: #0081A8; /* Cor do botão */
+    color: black; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; /* Centraliza o botão horizontalmente */
+}
+
+.back-button:hover {
+    background-color: #004863; /* Cor do botão ao passar o mouse */
+}
+
